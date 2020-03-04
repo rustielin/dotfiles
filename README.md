@@ -8,6 +8,11 @@ Some configs borrowed from others, and unfortunately this hasn't been under vers
 
 Requires [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) firstly.
 
+```
+# from https://ohmyz.sh/
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
+
 ## zshconfig 
 
 Not sure if a tool exists already for something like this, but storing some custom zsh configs in `.zshconfig`. This holds a number of shell scripts to be run on start (e.g. for aliases, utility functions, etc.) The `.zshrc` sources all of these files contained inside `.zshconfig`.
