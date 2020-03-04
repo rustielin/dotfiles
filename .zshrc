@@ -3,7 +3,7 @@
 #######################################
 
 # Path to oh-my-zsh installation.
-export ZSH="/Users/rustie/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="avit"
 
@@ -12,16 +12,11 @@ ZSH_THEME="avit"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
-    lol
-    rand-quote
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
-
-# henlo friemd
-quote
 
 #######################################
 # custom config zsh stuff
@@ -33,20 +28,38 @@ if [ -d $ZSH_CONFIG ]; then
 fi
 
 #######################################
-# other stuff
+# for version control
 #######################################
 
 # for tracking dotfiles using https://www.atlassian.com/git/tutorials/dotfiles
-alias config='/usr/bin/git --git-dir=/Users/rustie/.cfg/ --work-tree=/Users/rustie'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
+#######################################
+# PATH
+#######################################
 
-# ruby stuff
+export GOPATH=$HOME/go
+
 export PATH="/usr/local/lib/ruby/gems/2.6.0/bin:$PATH"
+export PATH="$PATH:/home/username/bin:/usr/local/homebrew"
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+export PATH="$PATH:$GOPATH/src/github.com/hyperledger/fabric/.build/bin" # fabric tools
+# export PATH="$PATH:/usr/local/opt/ruby/bin"
+
+#######################################
+# misc 
+#######################################
 
 # added by travis gem
-[ -f /Users/rustie/.travis/travis.sh ] && source /Users/rustie/.travis/travis.sh
+[ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
