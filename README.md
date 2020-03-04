@@ -8,7 +8,7 @@ Not sure if a tool exists already for something like this, but storing some cust
 
 ## installation
 
-Something along the lines of:
+Something along the lines of the following, though expecting a lot of the stuff in `.zshrc` etc to break since they depend on some system-dependent files and directories...
 
 ```
 git clone --bare https://github.com/rustielin/dotfiles.git $HOME/.cfg
