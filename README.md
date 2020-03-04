@@ -4,6 +4,10 @@ A collection of some of my dotfiles using [this guide](https://www.atlassian.com
 
 Some configs borrowed from others, and unfortunately this hasn't been under version control for too long, so credit to original authors. Might have lost a few.
 
+## installation
+
+Requires [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) firstly.
+
 ## zshconfig 
 
 Not sure if a tool exists already for something like this, but storing some custom zsh configs in `.zshconfig`. This holds a number of shell scripts to be run on start (e.g. for aliases, utility functions, etc.) The `.zshrc` sources all of these files contained inside `.zshconfig`.

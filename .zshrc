@@ -12,13 +12,16 @@ ZSH_THEME="avit"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
-    git
-    z
+    lol
+    rand-quote
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# henlo friemd
+quote
 
 #######################################
 # custom config zsh stuff
