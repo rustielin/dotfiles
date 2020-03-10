@@ -50,6 +50,31 @@ export PATH="$PATH:$GOPATH/src/github.com/hyperledger/fabric/.build/bin" # fabri
 # misc 
 #######################################
 
+FB_DEVVM_RE="^devvm[0-9]+.*facebook\.com$"
+if [[ $(uname -n) =~ $FB_DEVVM_RE ]]; then
+    IS_FB_DEVVM=true
+else
+    IS_FB_DEVVM=false
+fi
+
+# Facebook devserver proxy
+if [ "$IS_FB_DEVVM" == "true" ]; then
+    export no_proxy=".fbcdn.net,.facebook.com,.thefacebook.com,.tfbnw.net,.fb.com,.fburl.com,.facebook.net,.sb.fbsbx.com,localhost"
+    export http_proxy=fwdproxy:8080
+    export https_proxy=fwdproxy:8080
+fi
+
+# Open tmux automatically
+# If a session exists, just connect to it instead of creating a new one.
+if [[ -z $TMUX ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
+    if [[ $(tmux ls 2>&1) =~ "no server running" ]]; then
+        tmux
+    else
+        tmux attach
+    fi
+fi
+
+
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
 
