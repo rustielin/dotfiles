@@ -45,6 +45,7 @@ export PATH="$PATH:/home/username/bin:/usr/local/homebrew"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 export PATH="$PATH:$GOPATH/src/github.com/hyperledger/fabric/.build/bin" # fabric tools
 # export PATH="$PATH:/usr/local/opt/ruby/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 
 #######################################
 # misc 
@@ -58,22 +59,11 @@ else
 fi
 
 # Facebook devserver proxy
-if [ "$IS_FB_DEVVM" == "true" ]; then
+if [[ "$IS_FB_DEVVM" = "true" ]]; then
     export no_proxy=".fbcdn.net,.facebook.com,.thefacebook.com,.tfbnw.net,.fb.com,.fburl.com,.facebook.net,.sb.fbsbx.com,localhost"
     export http_proxy=fwdproxy:8080
     export https_proxy=fwdproxy:8080
 fi
-
-# Open tmux automatically
-# If a session exists, just connect to it instead of creating a new one.
-if [[ -z $TMUX ]] && [[ "$TERM_PROGRAM" != "vscode" ]]; then
-    if [[ $(tmux ls 2>&1) =~ "no server running" ]]; then
-        tmux
-    else
-        tmux attach
-    fi
-fi
-
 
 # added by travis gem
 [ -f $HOME/.travis/travis.sh ] && source $HOME/.travis/travis.sh
@@ -88,3 +78,4 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+export PATH="$HOME/.tfenv/bin:$PATH"
