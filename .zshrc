@@ -12,11 +12,18 @@ ZSH_THEME="avit"
 HYPHEN_INSENSITIVE="true"
 
 plugins=(
+    terraform
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# XXX: override avit theme
+# adds terraform 
+PROMPT='
+$(_user_host)${_current_dir} $(git_prompt_info) $(ruby_prompt_info) %{$fg[white]%}$(tf_prompt_info)%{$reset_color%}
+%{%(!.%F{red}.%F{white})%}▶%{$resetcolor%} '
 
 #######################################
 # custom config zsh stuff
