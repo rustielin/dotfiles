@@ -6,27 +6,19 @@ Some configs borrowed from others, and unfortunately this hasn't been under vers
 
 ## installation
 
-Requires [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) firstly.
+Just run the install script, and dependencies will be pulled in automatically:
 
 ```
-# from https://ohmyz.sh/
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-```
-
-Then install some plugins to emulate fish lol
-
-```
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+# pulls in ohmyzsh and plugins
+# sets git alias
+./install.sh
 ```
 
 ## zshconfig 
 
-Not sure if a tool exists already for something like this, but storing some custom zsh configs in `.zshconfig`. This holds a number of shell scripts to be run on start (e.g. for aliases, utility functions, etc.) The `.zshrc` sources all of these files contained inside `.zshconfig`.
+Not sure if a tool exists already for something like this, but storing some (small) custom zsh configs in `.zshconfig`. This holds a number of shell scripts to be run on start (e.g. for aliases, utility functions, etc.) The `.zshrc` sources all of these files contained inside `.zshconfig`.
 
-## installation
-
-Something along the lines of the following, though expecting a lot of the stuff in `.zshrc` etc to break since they depend on some system-dependent files and directories... oh well good enough for now.
+## note on git alias
 
 ```
 git clone --bare https://github.com/rustielin/dotfiles.git $HOME/.cfg
