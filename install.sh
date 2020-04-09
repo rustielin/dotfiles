@@ -28,3 +28,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # bash language support in coc
  npm i -g bash-language-server
+
+ # fzf
+ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+ ~/.fzf/install
