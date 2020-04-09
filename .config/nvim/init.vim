@@ -26,7 +26,7 @@ Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 " Initialize plugin system
 call plug#end()
