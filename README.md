@@ -9,6 +9,11 @@ Some configs borrowed from others, and unfortunately this hasn't been under vers
 Just run the install script, and dependencies will be pulled in automatically:
 
 ```
+source <(curl -s https://raw.githubusercontent.com/rustielin/dotfiles/master/install.sh)
+```
+
+Cloned:
+```
 # pulls in ohmyzsh and plugins
 # sets git alias
 ./install.sh
