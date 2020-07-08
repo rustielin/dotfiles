@@ -10,3 +10,16 @@ function scratch() {
   echo "Removing scratch directory"
   rm -r "$SCRATCH"
 }
+
+#######################################
+# an alias for sorting git branches by date
+# short for: git branch log
+#######################################
+function glog() {
+  if ! command -v column &> /dev/null
+  then
+    echo "column command could not be found"
+  fi
+  git for-each-ref --sort='-committerdate' --format='%(refname)%09%(committerdate)' refs/heads \
+      | sed -e 's-refs/heads/--' | column -t
+}
